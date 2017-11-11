@@ -10,7 +10,9 @@
     * re
     * os
     * glob
+        * 遵循 Unix 路徑擴展規則的文件路徑
     * shutil
+        * 提供文件的複製和刪除
     * Unipath
 
 [Python: OS, Shutil, Glob & Unipath](https://lukewickstead.wordpress.com/2015/06/12/os-shutil-glob-unipath/)
