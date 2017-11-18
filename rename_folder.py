@@ -1,4 +1,3 @@
-
 # coding: utf-8
 
 # 開頭比對
@@ -28,3 +27,4 @@ for fn in os.listdir('.'):
     except PermissionError as e:
         print(e)
         pass
+
