@@ -1,3 +1,4 @@
+
 # coding: utf-8
 
 # 開頭比對
@@ -21,10 +22,9 @@ for fn in os.listdir('.'):
 
 for fn in os.listdir('.'):
     try:
-        match = re.sub(r'\s\[(320K\+BK|320K|MP3)\]$', '',fn)
+        match = re.sub(r'\[(320K\+BK|320K|MP3)\]$', '',fn)
         print("[INFO] 成功去除結尾格式：" + match)
         os.rename(fn, match)
     except PermissionError as e:
         print(e)
         pass
-
