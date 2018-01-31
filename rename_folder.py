@@ -15,6 +15,9 @@ for fn in os.listdir('.'):
     except PermissionError as e:
         print(e)
         pass
+    except FileExistsError as e:
+        print(e)
+        pass
 
 # 結尾比對
 # 找出資料夾名稱的結尾格式為 ' [320K+BK]' 或 ' [320K]' 或 ' [MP3]'
@@ -26,5 +29,8 @@ for fn in os.listdir('.'):
         print("[INFO] 成功去除結尾格式：" + match)
         os.rename(fn, match)
     except PermissionError as e:
+        print(e)
+        pass
+    except FileExistsError as e:
         print(e)
         pass
