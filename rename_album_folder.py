@@ -17,9 +17,9 @@ for fn in os.listdir('.'):
         os.rename(fn, match)
         print("[INFO] 成功去除開頭格式：" + match)
 
-        match2 = re.sub(r'」／.*', '」',fn)
+        match2 = re.sub(r'\[(320K\+BK|320K|MP3)\]$', '',fn)
         os.rename(fn, match2)
-        match3 = re.sub(r'\[(320K\+BK|320K|MP3)\]$', '',fn)
+        match3 = re.sub(r'」／.*', '」',fn)
         os.rename(fn, match3)
         print("[INFO] 成功去除結尾格式：" + match3)
     except PermissionError as e:
