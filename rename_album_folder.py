@@ -16,12 +16,30 @@ for fn in os.listdir('.'):
         match = re.sub(r'^\[\d{6}\]\s', '',fn)
         os.rename(fn, match)
         print("[INFO] 成功去除開頭格式：" + match)
+    except PermissionError as e:
+        print(e)
+        pass
+    except FileExistsError as e:
+        print(e)
+        pass
 
+for fn in os.listdir('.'):
+    try:
         match2 = re.sub(r'\[(320K\+BK|320K|MP3)\]$', '',fn)
         os.rename(fn, match2)
+        print("[INFO] 成功去除結尾格式 1：" + match2)
+    except PermissionError as e:
+        print(e)
+        pass
+    except FileExistsError as e:
+        print(e)
+        pass
+
+for fn in os.listdir('.'):
+    try:
         match3 = re.sub(r'」／.*', '」',fn)
         os.rename(fn, match3)
-        print("[INFO] 成功去除結尾格式：" + match3)
+        print("[INFO] 成功去除結尾格式 2：" + match3)
     except PermissionError as e:
         print(e)
         pass
