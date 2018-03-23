@@ -1,12 +1,12 @@
 # coding: utf-8
 
-import os
-import re
+from os import listdir, rename
+from re import sub
 
-for fn in os.listdir('.'):
+for fn in listdir('.'):
     try:
-        match = re.sub(r'\.rar.*', '.rar',fn)
-        os.rename(fn, match)
+        match = sub(r'\.rar.*', '.rar',fn)
+        rename(fn, match)
         print("[INFO] 成功去除格式：" + match)
     except PermissionError as e:
         print(e)
