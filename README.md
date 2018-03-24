@@ -2,7 +2,7 @@
 
 ---
 
-## 使用 python 自動化日常的瑣碎事務
+# 使用 python 自動化日常的瑣碎事務
 
 * OS
     * Windows 7
@@ -27,3 +27,19 @@
     * 依正規表示法對**當下目錄**之資料夾重新命名
 2. 整理壓縮檔
     * 去除副檔名之後的所有後綴
+
+---
+
+# Automate the Boring Stuff with Python
+
+* Search for text in a file or across multiple files
+* Create, update, move, and rename files and folders
+* Search the Web and download online content
+* Update and format data in Excel spreadsheets of any size
+* Split, merge, watermark, and encrypt PDFs
+* Send reminder emails and text notifications
+* Fill out online forms
+
+https://automatetheboringstuff.com/
+
+
