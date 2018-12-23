@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # coding: utf-8
 
 from os import rename, listdir
@@ -12,10 +11,7 @@ from re import sub
 # 找出資料夾名稱的結尾格式為 ' [320K+BK]' 或 ' [320K]' 或 ' [MP3]'
 # 比對後取代為空字串。
 
-folder_path = 'E:\BitComet Downloads'
-
-'''
-for fn in listdir(folder_path):
+for fn in listdir('.'):
     try:
         match = sub(r'^\[\d{6}\]\s', '',fn)
         rename(fn, match)
@@ -27,7 +23,7 @@ for fn in listdir(folder_path):
         print(e)
         pass
 
-for fn in listdir(folder_path):
+for fn in listdir('.'):
     try:
         match2 = sub(r'\[(320K\+BK|320K|MP3)\]$', '',fn)
         rename(fn, match2)
@@ -39,7 +35,7 @@ for fn in listdir(folder_path):
         print(e)
         pass
 
-for fn in listdir(folder_path):
+for fn in listdir('.'):
     try:
         match3 = sub(r'」／.*', '」',fn)
         rename(fn, match3)
@@ -50,4 +46,3 @@ for fn in listdir(folder_path):
     except FileExistsError as e:
         print(e)
         pass
-'''
