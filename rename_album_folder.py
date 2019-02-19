@@ -25,7 +25,6 @@ for file in files:
     if file.endswith('.rar'):
         shutil.move(os.path.join(folder_path, file), os.path.join(rar_backup_path, file))
 
-'''
 for fn in os.listdir(folder_path):
     try:
         # [181017]
@@ -33,10 +32,10 @@ for fn in os.listdir(folder_path):
         os.rename(fn, match)
         print("[INFO] 成功去除開頭之日期格式：" + match)
     except PermissionError as e:
-        print(e)
+        print("[ERROR]", e)
         pass
     except FileExistsError as e:
-        print(e)
+        print("[ERROR]", e)
         pass
 
 for fn in os.listdir(folder_path):
@@ -46,10 +45,10 @@ for fn in os.listdir(folder_path):
         os.rename(fn, match)
         print("[INFO] 成功去除開頭之日期格式：" + match)
     except PermissionError as e:
-        print(e)
+        print("[ERROR]", e)
         pass
     except FileExistsError as e:
-        print(e)
+        print("[ERROR]", e)
         pass
 
 for fn in os.listdir(folder_path):
@@ -60,10 +59,10 @@ for fn in os.listdir(folder_path):
         os.rename(fn, match2)
         print("[INFO] 成功去除後綴格式：" + match2)
     except PermissionError as e:
-        print(e)
+        print("[ERROR]", e)
         pass
     except FileExistsError as e:
-        print(e)
+        print("[ERROR]", e)
         pass
 
 
@@ -74,9 +73,8 @@ for fn in os.listdir(folder_path):
         os.rename(fn, match3)
         print("[INFO] 成功去除後綴之歌手資訊：" + match3)
     except PermissionError as e:
-        print(e)
+        print("[ERROR]", e)
         pass
     except FileExistsError as e:
-        print(e)
+        print("[ERROR]", e)
         pass
-'''

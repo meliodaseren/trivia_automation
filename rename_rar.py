@@ -10,8 +10,8 @@ for fn in listdir('.'):
         rename(fn, match)
         print("[INFO] 成功去除格式：" + match)
     except PermissionError as e:
-        print(e)
+        print("[ERROR]", e)
         pass
     except FileExistsError as e:
-        print(e)
+        print("[ERROR]", e)
         pass

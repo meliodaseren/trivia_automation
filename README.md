@@ -21,12 +21,10 @@
 
 [Python: OS, Shutil, Glob & Unipath](https://lukewickstead.wordpress.com/2015/06/12/os-shutil-glob-unipath/)
 
-### 自動化模組
+### 模組
 
 1. 整理 MP3 音樂資料夾
-    * 依正規表示法對**當下目錄**之資料夾重新命名
 2. 整理壓縮檔
-    * 去除副檔名之後的所有後綴
 
 ---
 
