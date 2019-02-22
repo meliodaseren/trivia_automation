@@ -2,15 +2,13 @@
 
 ---
 
-# 使用 python 自動化日常的瑣碎事務
+## 使用 python 自動化日常的瑣碎事務
 
 * OS
     * Windows 7
-
 * Python version
-    * Python 3.6.1 :: Anaconda 4.4.0 (64-bit)
-
-* Packages
+    * Python 3.x
+* Required Packages
     * re
     * os
     * glob
@@ -21,14 +19,14 @@
 
 [Python: OS, Shutil, Glob & Unipath](https://lukewickstead.wordpress.com/2015/06/12/os-shutil-glob-unipath/)
 
-### 模組
+## Model
 
 1. 整理 MP3 音樂資料夾
 2. 整理壓縮檔
 
 ---
 
-# Automate the Boring Stuff with Python
+## Automate the Boring Stuff with Python
 
 * Search for text in a file or across multiple files
 * Create, update, move, and rename files and folders
@@ -39,5 +37,3 @@
 * Fill out online forms
 
 https://automatetheboringstuff.com/
-
-
