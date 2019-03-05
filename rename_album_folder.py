@@ -3,7 +3,7 @@
 
 import os
 import shutil
-from re import sub
+import re
 
 # 開頭比對
 # 找出資料夾名稱的開頭格式為 '[123456] '
@@ -16,10 +16,10 @@ from re import sub
 #folder_path = 'E:\BitComet Downloads'
 folder_path = '.'
 files = os.listdir(folder_path)
-rar_backup_path = 'E:\BitComet Downloads\RAR_Backup'
+rar_backup_path = "E:\\BitComet Downloads\\RAR_Backup"
 
-if not os.path.exists('E:\BitComet Downloads\RAR_Backup'):
-    os.makedirs('E:\BitComet Downloads\RAR_Backup')
+if not os.path.exists(rar_backup_path):
+    os.makedirs(rar_backup_path)
 
 for file in files:
     if file.endswith('.rar'):
@@ -28,7 +28,7 @@ for file in files:
 for fn in os.listdir(folder_path):
     try:
         # [181017]
-        match = sub(r'^\[\d{6}\]', '',fn)
+        match = re.sub(r'^\[\d{6}\]', '',fn)
         os.rename(fn, match)
         print("[INFO] 成功去除開頭之日期格式：" + match)
     except PermissionError as e:
@@ -41,7 +41,7 @@ for fn in os.listdir(folder_path):
 for fn in os.listdir(folder_path):
     try:
         # [2016.10.28]
-        match = sub(r'^\[\d{4}\.\d{2}\.\d{2}\]', '',fn)
+        match = re.sub(r'^\[\d{4}\.\d{2}\.\d{2}\]', '',fn)
         os.rename(fn, match)
         print("[INFO] 成功去除開頭之日期格式：" + match)
     except PermissionError as e:
@@ -54,8 +54,8 @@ for fn in os.listdir(folder_path):
 for fn in os.listdir(folder_path):
     try:
         # [320K+BK], [320K], [MP3]
-        match2 = sub(r'\[(320K\+BK|320K|MP3|MP3\s320K|MP3\s320K\+BK)\]$', '',fn)
-        match2 = sub(r'\[(320K.*|MP3.*)\]$', '',fn)        
+        match2 = re.sub(r'\[(320K\+BK|320K|MP3|MP3\s320K|MP3\s320K\+BK)\]$', '',fn)
+        match2 = re.sub(r'\[(320K.*|MP3.*)\]$', '',fn)        
         os.rename(fn, match2)
         print("[INFO] 成功去除後綴格式：" + match2)
     except PermissionError as e:
@@ -69,7 +69,7 @@ for fn in os.listdir(folder_path):
 for fn in os.listdir(folder_path):
     try:
         # 」／.*
-        match3 = sub(r'」／.*', '」',fn)
+        match3 = re.sub(r'」／.*', '」',fn)
         os.rename(fn, match3)
         print("[INFO] 成功去除後綴之歌手資訊：" + match3)
     except PermissionError as e:
