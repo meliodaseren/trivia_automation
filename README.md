@@ -1,28 +1,22 @@
-**※ 程式碼將直接對資料夾或檔案做變更，建議優先備份資料夾及檔案。**
+**※ 此 Repo 單純是存放我用在 Windows 上的一些腳本，大部分都寫得很趕又很糟，但又很懶得改。**
 
 ---
 
 ## 使用 python 自動化日常的瑣碎事務
 
-* OS
+* Environment
     * Windows 7
-* Python version
-    * Python 3.x
+    * Python 3.6.x
 * Required Packages
     * re
     * os
     * glob
-        * 遵循 Unix 路徑擴展規則的文件路徑
     * shutil
-        * 提供文件的複製和刪除
-    * Unipath
-
-[Python: OS, Shutil, Glob & Unipath](https://lukewickstead.wordpress.com/2015/06/12/os-shutil-glob-unipath/)
 
 ## Model
 
-1. 整理 MP3 音樂資料夾
-2. 整理壓縮檔
+1. 照指定格式整理 MP3 音樂資料夾
+2. 去除壓縮檔後綴
 
 ---
 

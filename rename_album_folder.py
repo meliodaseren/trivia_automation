@@ -13,10 +13,9 @@ import re
 # 找出資料夾名稱的結尾格式為 ' [320K+BK]' 或 ' [320K]' 或 ' [MP3]'
 # 比對後取代為空字串。
 
-#folder_path = 'E:\BitComet Downloads'
-folder_path = '.'
-files = os.listdir(folder_path)
+folder_path = 'E:\BitComet Downloads'
 rar_backup_path = "E:\\BitComet Downloads\\RAR_Backup"
+files = os.listdir(folder_path)
 
 if not os.path.exists(rar_backup_path):
     os.makedirs(rar_backup_path)
@@ -55,7 +54,7 @@ for fn in os.listdir(folder_path):
     try:
         # [320K+BK], [320K], [MP3]
         match2 = re.sub(r'\[(320K\+BK|320K|MP3|MP3\s320K|MP3\s320K\+BK)\]$', '',fn)
-        match2 = re.sub(r'\[(320K.*|MP3.*)\]$', '',fn)        
+        match2 = re.sub(r'\[(320K.*|MP3.*)\]$', '',fn)
         os.rename(fn, match2)
         print("[INFO] 成功去除後綴格式：" + match2)
     except PermissionError as e:
@@ -78,3 +77,6 @@ for fn in os.listdir(folder_path):
     except FileExistsError as e:
         print("[ERROR]", e)
         pass
+
+if __name__ == '__main__':
+    pass

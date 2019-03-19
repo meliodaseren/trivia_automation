@@ -15,3 +15,6 @@ for fn in listdir('.'):
     except FileExistsError as e:
         print("[ERROR]", e)
         pass
+
+if __name__ == '__main__':
+    pass

@@ -7,14 +7,13 @@ import shutil
 import re
 
 folder_path = "E:\\BitComet Downloads"
+rar_backup_path = "E:\\BitComet Downloads\\RAR_Backup"
 dirs = os.listdir(folder_path)
 
-rar_backup_path = "E:\\BitComet Downloads\\RAR_Backup"
 if not os.path.exists(rar_backup_path):
     os.makedirs(rar_backup_path)
 
 for dir in dirs:
-    
     if dir.endswith('.rar'):
         #shutil.move(os.path.join(folder_path, dir), os.path.join(rar_backup_path, dir))
         shutil.move(f"{folder_path}\\{dir}", f"{rar_backup_path}\\{dir}")
@@ -92,7 +91,7 @@ for fn in os.listdir(folder_path):
     try:
         # [320K+BK], [320K], [MP3]
         match = re.sub(r'\[(320K\+BK|320K|MP3|MP3\s320K|MP3\s320K\+BK)\]$', '',fn)
-        #match = re.sub(r'\[(320K.*|MP3.*)\]$', '',fn)        
+        #match = re.sub(r'\[(320K.*|MP3.*)\]$', '',fn)
         os.rename(f"{folder_path}\\{fn}", f"{folder_path}\\{match}")
         #print("[INFO] 成功去除後綴格式：" + match)
     except PermissionError as e:
@@ -115,3 +114,6 @@ for fn in os.listdir(folder_path):
     except FileExistsError as e:
         print("[ERROR]", e)
         pass
+
+if __name__ == '__main__':
+    pass
