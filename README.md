@@ -2,7 +2,7 @@
 
 ---
 
-## 使用 python 自動化日常的瑣碎事務
+## Automate the boring stuff with Python in my Windows 7
 
 * Environment
     * Windows 7
@@ -20,7 +20,7 @@
 
 ---
 
-## Automate the Boring Stuff with Python
+## Code Examples
 
 * Search for text in a file or across multiple files
 * Create, update, move, and rename files and folders
