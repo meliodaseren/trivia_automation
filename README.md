@@ -13,7 +13,7 @@
     * glob
     * shutil
 
-## Model
+## Tasks
 
 1. 照指定格式整理 MP3 音樂資料夾
 2. 去除壓縮檔後綴
