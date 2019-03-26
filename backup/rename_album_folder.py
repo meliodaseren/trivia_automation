@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# coding: utf-8
+# -*- coding: utf-8 -*-
 
 import os
 import shutil
@@ -63,7 +63,6 @@ for fn in os.listdir(folder_path):
     except FileExistsError as e:
         print("[ERROR]", e)
         pass
-
 
 for fn in os.listdir(folder_path):
     try:
