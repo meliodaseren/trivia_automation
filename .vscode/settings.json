@@ -1,2 +1,43 @@
 {
+    "python.pythonPath": "E:\\Anaconda3\\python.exe",
+    /*"workbench.colorCustomizations": {
+        "terminal.background":"#2B2B2B",
+        "terminal.foreground":"#E6E1DC",
+        "terminalCursor.background":"#E6E1DC",
+        "terminalCursor.foreground":"#E6E1DC",
+        "terminal.ansiBlack":"#2B2B2B",
+        "terminal.ansiBlue":"#6D9CBE",
+        "terminal.ansiBrightBlack":"#5A647E",
+        "terminal.ansiBrightBlue":"#6D9CBE",
+        "terminal.ansiBrightCyan":"#519F50",
+        "terminal.ansiBrightGreen":"#A5C261",
+        "terminal.ansiBrightMagenta":"#B6B3EB",
+        "terminal.ansiBrightRed":"#DA4939",
+        "terminal.ansiBrightWhite":"#F9F7F3",
+        "terminal.ansiBrightYellow":"#FFC66D",
+        "terminal.ansiCyan":"#519F50",
+        "terminal.ansiGreen":"#A5C261",
+        "terminal.ansiMagenta":"#B6B3EB",
+        "terminal.ansiRed":"#DA4939",
+        "terminal.ansiWhite":"#E6E1DC",
+        "terminal.ansiYellow":"#FFC66D"
+    },*/
+    "todohighlight.keywords": [
+        {
+            "text": "NOTE:",
+            "color": "#ffffff",
+            "backgroundColor": "#666666",
+            "isWholeLine": "true",
+        },
+        {
+            "text": "HACK:",
+            "color": "#ffffff",
+            "backgroundColor": "#9932CC",
+        },
+        {
+            "text": "XXX:",
+            "color": "#ffffff",
+            "backgroundColor": "#DC143C",
+        }
+    ]
 }

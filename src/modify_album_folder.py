@@ -8,7 +8,7 @@ import re
 
 def organize_album_folders(folder_path):
     for fn in os.listdir(folder_path):
-        # Backup the specific files
+        # NOTE: Backup the specific files
         if fn.endswith('.rar'):
             shutil.move(f"{folder_path}\\{fn}", f"{backup_path}\\{fn}")
             continue
@@ -29,7 +29,6 @@ def organize_album_folders(folder_path):
         
         url_path = f"{fn_path}\\*.url"
         url_glob = glob.glob(url_path)
-        #print("[INFO]", url_path, url_glob)
         for _ in url_glob:
             print(f"Remove the {_}")
             os.remove(_)
@@ -37,7 +36,6 @@ def organize_album_folders(folder_path):
         print("[Stage 1-2] Move MP3 file to previous folder, and remove empty folder")
         mp3_folder = f"{folder_path}\\{fn}\\MP3"
         if os.path.isdir(mp3_folder):
-    #        print("[INFO] MP3 folder is exist", mp3_folder)
             for fn in os.listdir(mp3_folder):
                 filename = f"{mp3_folder}\\{fn}"
                 shutil.move(filename, fn_path)
