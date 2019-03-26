@@ -12,9 +12,9 @@
 
 ## Tasks
 
-1. `modify_album_folder.py` : 照指定格式整理 MP3 音樂資料夾
-2. `rename_rar.py` : 去除壓縮檔後綴
-3. `list_directory_tree.py` : 備份資料夾結構
+1. `src/modify_album_folder.py` : 照指定格式整理 MP3 音樂資料夾
+2. `src/rename_rar.py` : 去除壓縮檔後綴
+3. `src/list_directory_tree.py` : 備份資料夾結構
 
 ---
 
