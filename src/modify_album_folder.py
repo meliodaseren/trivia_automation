@@ -8,6 +8,7 @@ import re
 
 def organize_album_folders(folder_path):
     for fn in os.listdir(folder_path):
+        print(f"-----\n[DEBUG] {fn}")
         # NOTE: Backup the specific files
         if fn.endswith('.rar'):
             shutil.move(f"{folder_path}\\{fn}", f"{backup_path}\\{fn}")
@@ -21,19 +22,15 @@ def organize_album_folders(folder_path):
 
         fn_path = f"{folder_path}\\{fn}"
         print("[INFO] Processing", fn)
-
+        '''
         print("[Stage 1-1] Check the *.url in folder")
-        #if fn.endswith(f'{fn_path}\\.url'):
-            #print(fn)
-            #os.remove()
-        
         url_path = f"{fn_path}\\*.url"
         url_glob = glob.glob(url_path)
         for _ in url_glob:
             print(f"Remove the {_}")
             os.remove(_)
-
-        print("[Stage 1-2] Move MP3 file to previous folder, and remove empty folder")
+        '''
+        print("[Stage 2-1] Move MP3 file to previous folder, and remove empty folder")
         mp3_folder = f"{folder_path}\\{fn}\\MP3"
         if os.path.isdir(mp3_folder):
             for fn in os.listdir(mp3_folder):
@@ -41,8 +38,9 @@ def organize_album_folders(folder_path):
                 shutil.move(filename, fn_path)
             os.removedirs(mp3_folder)
 
-        print("[Stage 1-3] Replace『』to「」")
+        print("[Stage 2-2] Replace『』to「」")
         fn_new = fn.replace("『", "「").replace("』", "」")
+        print(f"{folder_path}\\{fn}", f"{folder_path}\\{fn_new}")
         os.rename(f"{folder_path}\\{fn}", f"{folder_path}\\{fn_new}")
 
 def remove_date_postfix(folder_path):
@@ -119,10 +117,13 @@ if __name__ == '__main__':
     if not os.path.exists(backup_path):
         os.makedirs(backup_path)
     
-    print("[Stage 1] Organize album folder")
+    print("[Stage 1] Remove *.url in folder")
+    os.system("rm */*.url")
+
+    print("[Stage 2] Organize album folder")
     organize_album_folders(folder_path)
     remove_date_postfix(folder_path)
 
-    print("[Stage 2] Remove the prefix and suffix of album folder")
+    print("[Stage 3] Remove the prefix and suffix of album folder")
     remove_suffix(folder_path)
     remove_singer_info(folder_path)
