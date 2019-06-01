@@ -4,13 +4,13 @@
 
 ---
 
-## Automate the boring stuff with Python in my Windows 7
+## 協助我處理一些瑣碎工作的腳本 (在我的 Windows 7 上)
 
 * Environment
     * Windows 7 64 bits
     * Python 3.6.x
 
-## Tasks
+## 任務項目
 
 1. `src/modify_album_folder.py` : 照指定格式整理 MP3 音樂資料夾
 2. `src/rename_rar.py` : 去除壓縮檔後綴
@@ -18,7 +18,7 @@
 
 ---
 
-## Code Examples From Textbook
+## "Automate the Boring Stuff with Python" 的範例程式
 
 * Search for text in a file or across multiple files
 * Create, update, move, and rename files and folders

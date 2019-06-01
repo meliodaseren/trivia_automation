@@ -21,8 +21,9 @@ def organize_album_folders(folder_path):
             continue
 
         fn_path = f"{folder_path}\\{fn}"
-        print("[INFO] Processing", fn)
+        #TODO: Doesn't support to clean up the *.url in folders
         '''
+        print("[INFO] Processing", fn)
         print("[Stage 1-1] Check the *.url in folder")
         url_path = f"{fn_path}\\*.url"
         url_glob = glob.glob(url_path)
@@ -31,17 +32,18 @@ def organize_album_folders(folder_path):
             os.remove(_)
         '''
         print("[Stage 2-1] Move MP3 file to previous folder, and remove empty folder")
-        mp3_folder = f"{folder_path}\\{fn}\\MP3"
+        mp3_folder = f"{fn_path}\\MP3"
         if os.path.isdir(mp3_folder):
             for fn in os.listdir(mp3_folder):
                 filename = f"{mp3_folder}\\{fn}"
                 shutil.move(filename, fn_path)
             os.removedirs(mp3_folder)
 
-        print("[Stage 2-2] Replace『』to「」")
-        fn_new = fn.replace("『", "「").replace("』", "」")
-        print(f"{folder_path}\\{fn}", f"{folder_path}\\{fn_new}")
-        os.rename(f"{folder_path}\\{fn}", f"{folder_path}\\{fn_new}")
+        print("[Stage 2-2] Rename the folder, replace『』to「」")
+        if "『" in fn:
+            fn_new_path = fn_path.replace("『", "「").replace("』", "」")
+            print(f"  Rename {fn_path} to {fn_new_path}")
+            os.rename(f"{fn_path}", f"{fn_new_path}")
 
 def remove_date_postfix(folder_path):
     '''
@@ -112,7 +114,8 @@ def remove_singer_info(folder_path):
             pass
 
 if __name__ == '__main__':
-    folder_path = input("Please enter your path: ")
+    folder_path = "E:\\BitComet Downloads\\190601"
+    #folder_path = input("Please enter your path: ")
     backup_path = f"{folder_path}\\backup"
     if not os.path.exists(backup_path):
         os.makedirs(backup_path)
@@ -122,8 +125,8 @@ if __name__ == '__main__':
 
     print("[Stage 2] Organize album folder")
     organize_album_folders(folder_path)
-    remove_date_postfix(folder_path)
+#    remove_date_postfix(folder_path)
 
-    print("[Stage 3] Remove the prefix and suffix of album folder")
-    remove_suffix(folder_path)
-    remove_singer_info(folder_path)
+#    print("[Stage 3] Remove the prefix and suffix of album folder")
+#    remove_suffix(folder_path)
+#    remove_singer_info(folder_path)
