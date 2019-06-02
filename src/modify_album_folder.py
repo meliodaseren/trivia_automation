@@ -42,7 +42,7 @@ def organize_album_folders(folder_path):
         print("[Stage 2-2] Rename the folder, replace『』to「」")
         if "『" in fn:
             fn_new_path = fn_path.replace("『", "「").replace("』", "」")
-            print(f"  Rename {fn_path} to {fn_new_path}")
+            print(f"  Rename {fn_path} -> {fn_new_path}")
             os.rename(f"{fn_path}", f"{fn_new_path}")
 
 def remove_date_postfix(folder_path):
@@ -87,10 +87,11 @@ def remove_suffix(folder_path):
         if fn == 'backup': continue
         try:
             # [320K+BK], [320K], [MP3]
-            match = re.sub(r'\[(320K\+BK|320K|MP3|MP3\s320K|MP3\s320K\+BK)\]$', '',fn)
-            #match = re.sub(r'\[(320K.*|MP3.*)\]$', '',fn)
-            os.rename(f"{folder_path}\\{fn}", f"{folder_path}\\{match}")
-            #print("[INFO] 成功去除後綴格式：" + match)
+            if re.search(r'\[(320K\+BK|320K|MP3|MP3\s320K|MP3\s320K\+BK)\]$', fn):
+                match = re.sub(r'\[(320K\+BK|320K|MP3|MP3\s320K|MP3\s320K\+BK)\]$', '', fn)
+                print(f"  Rename {folder_path}\\{fn} -> {folder_path}\\{match}")
+                os.rename(f"{folder_path}\\{fn}", f"{folder_path}\\{match}")
+                #print("[INFO] 成功去除後綴格式：" + match)
         except PermissionError as e:
             print("[ERROR]", e)
             pass
@@ -103,9 +104,11 @@ def remove_singer_info(folder_path):
         if fn == 'backup': continue
         try:
             # 」／.*
-            match = re.sub(r'」／.*', '」',fn)
-            os.rename(f"{folder_path}\\{fn}", f"{folder_path}\\{match}")
-            #print("[INFO] 成功去除後綴之歌手資訊：" + match)
+            if re.search(r'」／.*', fn):
+                match = re.sub(r'」／.*', '」',fn)
+                print(f"  Rename {folder_path}\\{fn} -> {folder_path}\\{match}")
+                os.rename(f"{folder_path}\\{fn}", f"{folder_path}\\{match}")
+                #print("[INFO] 成功去除後綴之歌手資訊：" + match)
         except PermissionError as e:
             print("[ERROR]", e)
             pass
@@ -114,8 +117,7 @@ def remove_singer_info(folder_path):
             pass
 
 if __name__ == '__main__':
-    folder_path = "E:\\BitComet Downloads\\190601"
-    #folder_path = input("Please enter your path: ")
+    folder_path = input("Please enter your path: ")
     backup_path = f"{folder_path}\\backup"
     if not os.path.exists(backup_path):
         os.makedirs(backup_path)
@@ -125,8 +127,8 @@ if __name__ == '__main__':
 
     print("[Stage 2] Organize album folder")
     organize_album_folders(folder_path)
-#    remove_date_postfix(folder_path)
+    remove_date_postfix(folder_path)
 
-#    print("[Stage 3] Remove the prefix and suffix of album folder")
-#    remove_suffix(folder_path)
-#    remove_singer_info(folder_path)
+    print("[Stage 3] Remove the prefix and suffix of album folder")
+    remove_suffix(folder_path)
+    remove_singer_info(folder_path)
