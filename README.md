@@ -1,16 +1,11 @@
-> 此 Repo 單純是存放我用在 Windows 上的一些腳本
-> 
-> 大部分都寫得很趕又很糟，但又很懶得改，正在緩慢重寫中…
 
----
-
-## 協助我處理一些瑣碎工作的腳本 (在我的 Windows 7 上)
+## Support to process trivial work on my Windows
 
 * Environment
     * Windows 7 64 bits
     * Python 3.6.x
 
-## 任務項目
+## Tasks
 
 1. `src/modify_album_folder.py` : 照指定格式整理 MP3 音樂資料夾
 2. `src/rename_rar.py` : 去除壓縮檔後綴
