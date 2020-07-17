@@ -7,11 +7,11 @@ import re
 def rename_rar(folder_path):
     for fn in listdir(folder_path):
         try:
-            if re.search(r'\.rar.*', fn):
-                match = re.sub(r'\.rar.*', '.rar', fn)
+            if re.search(r'\.zip.*', fn):
+                match = re.sub(r'\.zip.*', '.cbz', fn)
                 print(fn, match)
                 rename(f"{folder_path}\\{fn}", f"{folder_path}\\{match}")
-                print("[INFO] remove rar postfix" + match)
+                print("[INFO] rename zip to cbz" + match)
         except PermissionError as e:
             print("[ERROR]", e)
         except FileExistsError as e:
