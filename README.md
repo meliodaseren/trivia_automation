@@ -10,6 +10,7 @@
 1. `src/modify_album_folder.py` : 照指定格式整理 MP3 音樂資料夾
 2. `src/rename_rar.py` : 去除壓縮檔後綴
 3. `src/list_directory_tree.py` : 備份資料夾結構
+4. `src/zip_jpg_to_cbz.py`：壓縮 jpg 到電子書格式 cbz
 
 ---
 
