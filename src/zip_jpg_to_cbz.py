@@ -7,19 +7,21 @@ import re
 import zipfile
 
 
-def zip_all_jpg(input_path):
-    out_path = os.path.abspath(os.getcwd())
+def zip_all_jpg(input_path, output_path):
     for folder in os.listdir(input_path):
-        # out_cbz = f'{folder}.zip'
-        out_cbz = f'{folder}.cbz'
-        zip_1 = zipfile.ZipFile(out_cbz, 'w')
-        for file in os.listdir(f'{input_path}/{folder}'):
-            # file = f'{input_path}/{folder}/{file}'
-            os.chdir(f'{input_path}/{folder}')
-            print(f"zip {file} to {out_cbz}")
-            zip_1.write(os.path.join('.', file), file, zipfile.ZIP_DEFLATED)
-            os.chdir(out_path)
-        zip_1.close()
+        if os.path.isdir(folder):
+            out_cbz = f'{folder}.cbz'
+            zip_1 = zipfile.ZipFile(out_cbz, 'w')
+            for file in os.listdir(f'{input_path}/{folder}'):
+                # file = f'{input_path}/{folder}/{file}'
+                os.chdir(f'{input_path}/{folder}')
+                print(f"zip {file} to {out_cbz}")
+                zip_1.write(os.path.join('.', file), file, zipfile.ZIP_DEFLATED)
+                os.chdir(output_path)
+            zip_1.close()
+        else:
+            # print(f'{folder} is not directory')
+            pass
 
 
 def rename_rar(input_path):
@@ -38,9 +40,10 @@ def rename_rar(input_path):
 
 if __name__ == '__main__':
     # folder_path = input("Please enter your path: ")
-    folder_path = sys.argv[1]
+    input_folder = 'G:\Kobo Forma'
+    output_folder = 'G:\Kobo Forma'
 
-    zip_all_jpg(folder_path)
+    zip_all_jpg(input_folder, output_folder)
 
     # if folder_path:
     #     rename_rar(folder_path)

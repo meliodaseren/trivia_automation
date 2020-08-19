@@ -1,0 +1,17 @@
+[core]
+	editor = \"D:\\Sublime Text 3\\sublime_text.exe\" -w
+[user]
+	email = julian07027@gmail.com
+	name = Eren
+[diff]
+	tool = bcomp
+[difftool "bcomp"]
+	cmd = \"G:\\Beyond Compare 4\\BCompare.exe\" \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[merge]
+	tool = bcomp
+[mergetool]
+	prompt = false
+[mergetool "bcomp"]
+	cmd = \"G:\\Beyond Compare 4\\BCompare.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
