@@ -8,7 +8,6 @@ import re
 
 def organize_album_folders(folder_path):
     for fn in os.listdir(folder_path):
-
         # NOTE: 備份特定檔案 rar/mp4/avi
         if fn.endswith('.rar'):
             shutil.move(f"{folder_path}\\{fn}", f"{backup_path}\\{fn}")
@@ -31,6 +30,7 @@ def organize_album_folders(folder_path):
             print(f"Remove the {_}")
             os.remove(_)
         
+    for fn in os.listdir(folder_path):
         print("[Stage 2-1] Move MP3 file to previous folder, and remove empty folder")
         mp3_folder = f"{fn_path}\\MP3"
         if os.path.isdir(mp3_folder):
@@ -39,6 +39,7 @@ def organize_album_folders(folder_path):
                 shutil.move(filename, fn_path)
             os.removedirs(mp3_folder)
 
+    for fn in os.listdir(folder_path):
         print("[Stage 2-2] Rename the folder, replace『』to「」")
         if "『" in fn:
             fn_new_path = fn_path.replace("『", "「").replace("』", "」")
