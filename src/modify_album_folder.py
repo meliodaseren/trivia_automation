@@ -24,7 +24,8 @@ def organize_album_folders(folder_path):
 
         #FIXME: 移除 *.url
         print("[Stage 1-1] Check the *.url in folder")
-        url_path = f"{fn_path}\\*.url"
+        url_path = f"{fn_path}\\*'.url'"
+        print(url_path)
         url_glob = glob.glob(url_path)
         for _ in url_glob:
             print(f"Remove the {_}")

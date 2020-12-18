@@ -9,11 +9,7 @@
     "explorer.confirmDelete": false,
     "editor.fontSize": 13,
     // "editor.fontFamily": "'DisposableDroid BB', Consolas, 'Courier New', 'monospace', 'SourceCodePro-Medium'",
-    "vim.disableAnnoyingNeovimMessage": true,
-
-    /* Python */
-    //"python.pythonPath": "E:\\Anaconda3\\python.exe",
-    "python.pythonPath": "E:\\Python\\Python38-32\\python.exe", // Win10
+    "vim.disableAnnoyingNeovimMessage": true, // Win10
     // "python.pythonPath": "${config:python.pythonPath}", // Mac
     //"python.pythonPath": "/Users/huangyue-lun/.pyenv/shims/python",
 
