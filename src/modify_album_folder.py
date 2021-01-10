@@ -20,19 +20,18 @@ def organize_album_folders(folder_path):
             continue
 
         fn_path = f"{folder_path}\\{fn}"
-        print("[INFO] Processing", fn)
+        print(f"[INFO] Processing {fn}")
 
         #FIXME: 移除 *.url
-        print("[Stage 1-1] Check the *.url in folder")
-        url_path = f"{fn_path}\\*'.url'"
-        print(url_path)
-        url_glob = glob.glob(url_path)
-        for _ in url_glob:
-            print(f"Remove the {_}")
-            os.remove(_)
+        # print(f"[Stage 1-1] Check the *.url in folder")
+        # url_path = f"{fn_path}\\*'.url'"
+        # url_glob = glob.glob(url_path)
+        # for _ in url_glob:
+        #     print(f"  Remove the {_}")
+        #     os.remove(_)
         
-    for fn in os.listdir(folder_path):
-        print("[Stage 2-1] Move MP3 file to previous folder, and remove empty folder")
+    # for fn in os.listdir(folder_path):
+        print(f"[Stage 2-1] Move MP3 file to previous folder, and remove empty folder")
         mp3_folder = f"{fn_path}\\MP3"
         if os.path.isdir(mp3_folder):
             for fn in os.listdir(mp3_folder):
@@ -40,8 +39,8 @@ def organize_album_folders(folder_path):
                 shutil.move(filename, fn_path)
             os.removedirs(mp3_folder)
 
-    for fn in os.listdir(folder_path):
-        print("[Stage 2-2] Rename the folder, replace『』to「」")
+    # for fn in os.listdir(folder_path):
+        print(f"[Stage 2-2] Rename the folder {fn}, replace『』to「」")
         if "『" in fn:
             fn_new_path = fn_path.replace("『", "「").replace("』", "」")
             print(f"  Rename {fn_path}\n  -> {fn_new_path}")
