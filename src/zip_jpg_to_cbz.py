@@ -16,7 +16,7 @@ def zip_all_jpg(path):
             continue
 
         if os.path.exists(f'{folder}.cbz'):
-            print(f'[WARN] {folder}.cbz already exists')
+            print(f'[WARN] ignore folder: {folder}.cbz already exists')
             continue
 
         dpath = f'{path}\\{folder}'
