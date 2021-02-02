@@ -5,47 +5,38 @@ import os
 import sys
 import re
 import zipfile
+# from glob import glob
 
 
-def zip_all_jpg(input_path, output_path):
-    for folder in os.listdir(input_path):
-        if os.path.isdir(folder):
+def zip_all_jpg(path):
+    os.chdir(path)
+    for folder in os.listdir(path):
+        if folder == 'backup' or folder == 'output' or '.cbz' in folder:
+            print(f'[WARN] ignore folder: {folder}')
+            continue
+
+        if os.path.exists(f'{folder}.cbz'):
+            print(f'[WARN] {folder}.cbz already exists')
+            continue
+
+        dpath = f'{path}\\{folder}'
+        if os.path.isdir(dpath):    
             out_cbz = f'{folder}.cbz'
-            zip_1 = zipfile.ZipFile(out_cbz, 'w')
-            for file in os.listdir(f'{input_path}/{folder}'):
-                # file = f'{input_path}/{folder}/{file}'
-                os.chdir(f'{input_path}/{folder}')
-                print(f"zip {file} to {out_cbz}")
-                zip_1.write(os.path.join('.', file), file, zipfile.ZIP_DEFLATED)
-                os.chdir(output_path)
-            zip_1.close()
+            output_zip = zipfile.ZipFile(out_cbz, 'w')
+            os.chdir(dpath)
+            for file in os.listdir(dpath):
+                if '.png' in file or '.jpg' in file:
+                    file = f'{dpath}\\{file}'
+                    print(f"zip {file} to {out_cbz}")
+                    output_zip.write(os.path.join('.', file), file, zipfile.ZIP_DEFLATED)
+            os.chdir(path)
+            output_zip.close()
         else:
-            # print(f'{folder} is not directory')
-            pass
-
-
-def rename_rar(input_path):
-    for fn in os.listdir(input_path):
-        try:
-            if re.search(r'\.zip.*', fn):
-                match = re.sub(r'\.zip.*', '.cbz', fn)
-                print(fn, match)
-                os.rename(f"{input_path}\\{fn}", f"{input_path}\\{match}")
-                print("[INFO] rename zip to cbz" + match)
-        except PermissionError as e:
-            print("[ERROR]", e)
-        except FileExistsError as e:
-            print("[ERROR]", e)
+            print(f'[WARN] {folder} is not a directory')
+            continue
 
 
 if __name__ == '__main__':
     # folder_path = input("Please enter your path: ")
-    input_folder = 'G:\Kobo Forma'
-    output_folder = 'G:\Kobo Forma'
-
-    zip_all_jpg(input_folder, output_folder)
-
-    # if folder_path:
-    #     rename_rar(folder_path)
-    # else:
-    #     rename_rar(".")
+    path = 'E:\\kobo ebook'
+    zip_all_jpg(path)

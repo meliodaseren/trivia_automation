@@ -7,7 +7,7 @@
     ],
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    "editor.fontSize": 13,
+    "editor.fontSize": 15,
     // "editor.fontFamily": "'DisposableDroid BB', Consolas, 'Courier New', 'monospace', 'SourceCodePro-Medium'",
     "vim.disableAnnoyingNeovimMessage": true, // Win10
     // "python.pythonPath": "${config:python.pythonPath}", // Mac
@@ -58,7 +58,7 @@
 
     /* Terminal */
     // "terminal.integrated.lineHeight": 1.1,
-    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontSize": 14,
     "terminal.integrated.fontFamily": "Consolas",
     // "terminal.integrated.fontFamily": "Monaco, Menlo, 'Courier New', monospace" // Mac
     "workbench.colorCustomizations": {
