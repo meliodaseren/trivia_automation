@@ -3,6 +3,7 @@
 
 import os
 
+
 def list_files(startpath):
     for root, dirs, files in os.walk(startpath):
         level = root.replace(startpath, '').count(os.sep)
@@ -11,6 +12,7 @@ def list_files(startpath):
         subindent = ' ' * 4 * (level + 1)
         for f in files:
             print(f'{subindent}{f}')
+
 
 if __name__ == '__main__':
     startpath = input("Please enter your path: ")

@@ -4,6 +4,7 @@
 from os import listdir, rename
 import re
 
+
 def rename_rar(folder_path):
     for fn in listdir(folder_path):
         try:
@@ -16,6 +17,7 @@ def rename_rar(folder_path):
             print("[ERROR]", e)
         except FileExistsError as e:
             print("[ERROR]", e)
+
 
 if __name__ == '__main__':
     folder_path = input("Please enter your path: ")
