@@ -24,17 +24,11 @@ def organize_album(folder_path):
             continue
 
         print(f"\nProcessing {fn}")
-        print(f"|-- [Stage 1] Remove prefix")
+        print(f"|-- [Stage 1]")
         organize_folder(fn, folder_path)
 
-        print(f"|-- [Stage 2] Remove prefix")
-        remove_prefix(fn, folder_path)
-
-        print(f"|-- [Stage 3] Remove suffix")
-        remove_suffix(fn, folder_path)
-
-        print(f"|-- [Stage 4] Remove singer information")
-        remove_singer_info(fn, folder_path)
+        print(f"|-- [Stage 2]")
+        rename_folder(fn, folder_path)
 
 
 def organize_folder(fn, folder_path):
@@ -42,11 +36,16 @@ def organize_folder(fn, folder_path):
         fn_path = f"{folder_path}\\{fn}"
 
         print(f"   |-- [1-1] Remove *.url")
-        url_path = f"{fn_path}\\*.url"
-        url_glob = glob.glob(url_path)
-        for _ in url_glob:
-            print(f"  Remove {_}")
-            os.remove(_)
+        # url_path = f"{fn_path}\\*.url"
+        # url_glob = glob.glob(url_path)
+        # for _ in url_glob:
+        #     print(f"  Remove {_}")
+        #     os.remove(_)
+        for root, dirs, files in os.walk(fn_path):
+            for _ in files:
+                if ".url" in _:
+                    print(f"  Remove {_}")
+                    os.remove(f"{fn_path}\\{_}")
 
         print(f"   |-- [1-2] Move MP3/file to previous folder, and remove empty folder")
         mp3_folder = f"{fn_path}\\MP3"
@@ -59,49 +58,41 @@ def organize_folder(fn, folder_path):
         print("[ERROR]", e, fn)
 
 
-def remove_prefix(fn, folder_path):
+def rename_folder(fn, folder_path):
     try:
         fn_path = f"{folder_path}\\{fn}"
+        match = fn
+
         #NOTE: [181017]
-        match = re.sub(r'^\[\d{6}\]', '',fn)
-        os.rename(f"{fn_path}", f"{folder_path}\\{match}")
-
+        if re.search(r'^\[\d{6}\]', match):
+            match = re.sub(r'^\[\d{6}\]', '',match)
+            
         #NOTE: [2016.10.28]
-        match = re.sub(r'^\[\d{4}\.\d{2}\.\d{2}\]', '',fn)
-        os.rename(f"{fn_path}", f"{folder_path}\\{match}")
-    except (PermissionError, FileExistsError) as e:
-        print("[ERROR]", e, fn)
+        if re.search(r'^\[\d{4}\.\d{2}\.\d{2}\]', match):
+            match = re.sub(r'^\[\d{4}\.\d{2}\.\d{2}\]', '', match)
 
-
-def remove_suffix(fn, folder_path):
-    try:
-        fn_path = f"{folder_path}\\{fn}"
         #NOTE: [320K+BK], [320K], [MP3]
-        if re.search(r'\[(320K\+BK|320K|MP3|MP3\s320K|MP3\s320K\+BK)\]$', fn):
-            match = re.sub(r'\[(320K\+BK|320K|MP3|MP3\s320K|MP3\s320K\+BK)\]$', '', fn)
-            os.rename(f"{fn_path}", f"{folder_path}\\{match}")
-    except (PermissionError, FileExistsError) as e:
-        print("[ERROR]", e, fn)
+        if re.search(r'\[(320K\+BK|320K|MP3|MP3\s320K|MP3\s320K\+BK)\]$', match):
+            match = re.sub(r'\[(320K\+BK|320K|MP3|MP3\s320K|MP3\s320K\+BK)\]$', '', match)
 
+        #NOTE: Singer information
+        if "『" in match:
+            match = re.sub("『", "「", match)
+        if "』" in match:
+            match = re.sub("』", "」", match)
+        if "」／" in match:
+            match = re.sub(r'」／.*', '」', match)
+        
+        print(f"  Rename {fn_path}\n -> {folder_path}\\{match}")
+        os.rename(f"{fn_path}", f"{folder_path}\\{match}")
 
-def remove_singer_info(fn, folder_path):
-    try:
-        fn_path = f"{folder_path}\\{fn}"
-        if "『" in fn or "』" in fn:
-            fn_new_path = fn_path.replace("『", "「").replace("』", "」")
-            print(f"  Rename {fn_path}\n  ->  {fn_new_path}")
-            os.rename(f"{fn_path}", f"{fn_new_path}")
-        if "」／" in fn:
-            match = re.sub(r'」／.*', '」',fn)
-            print(f"  Rename {fn_path} -> {folder_path}\\{match}")
-            os.rename(f"{fn_path}", f"{folder_path}\\{match}")
     except (PermissionError, FileExistsError) as e:
         print("[ERROR]", e, fn)
 
 
 if __name__ == '__main__':
     # folder_path = input("Please enter your path: ")
-    folder_path = 'D:\\Downloads'
+    folder_path = 'D:\\Downloads\\tmp'
 
     organize_album(folder_path)
 
