@@ -1,0 +1,108 @@
+{
+    "workbench.colorTheme": "Horizon",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.sideBar.location": "left",
+    "editor.rulers": [
+        79
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "editor.fontSize": 13,
+    // "editor.fontFamily": "'DisposableDroid BB', Consolas, 'Courier New', 'monospace', 'SourceCodePro-Medium'",
+    "vim.disableAnnoyingNeovimMessage": true,
+
+    /* Python */
+    //"python.pythonPath": "${config:python.pythonPath}", // Mac
+    "python.pythonPath": "/Users/huangyue-lun/.pyenv/shims/python", // Mac
+
+    /* Golang */
+    "files.autoSave": "onFocusChange",
+    "go.buildOnSave": "true",
+    "go.lintOnSave": "true",
+    "go.vetOnSave": "true",
+    "go.buildFlags": [],
+    "go.lintFlags": [],
+    "go.vetFlags": [],
+    "go.useCodeSnippetsOnFunctionSuggest": false,
+    "go.formatTool": "goreturns",
+    "go.goroot": "/usr/local/opt/go/libexec",
+    "go.gopath": "/Users/huangyue-lun/proj/go_project",
+    // User defined GOPATH setting
+    //"terminal.integrated.shell.windows": "",
+    //"go.gopath": "${workspaceRoot}",
+    //"go.inferGopath": true
+
+    /* TODO Highlight setting */
+    "todohighlight.keywords": [
+        // TODO: FIXME:
+        {
+            "text": "NOTE:",
+            "color": "#ffffff",
+            "backgroundColor": "#008080",
+            "isWholeLine": "true"
+        },
+        {
+            "text": "HACK:",
+            "color": "#ffffff",
+            "backgroundColor": "#9932CC"
+        },
+        {
+            "text": "XXX:",
+            "color": "#ffffff",
+            "backgroundColor": "#DC143C"
+        }
+    ],
+    "vsicons.dontShowNewVersionMessage": true,
+
+    /* Markdown */
+    "markdown.preview.fontSize": 13,
+    "markdown.preview.lineHeight": 1.4,
+
+    /* Terminal */
+    // "terminal.integrated.lineHeight": 1.1,
+    "terminal.integrated.fontSize": 12,
+    //"terminal.integrated.fontFamily": "Consolas",
+    //"terminal.integrated.fontFamily": "Monaco, Menlo, 'Courier New', monospace" // Mac
+    "workbench.colorCustomizations": {
+        // Totally Transparent
+        // "editor.selectionHighlightBackground": "#ffffff00",
+        // "editor.findMatchHighlightBackground": "#ffffff00",
+        // Borders
+        "editor.findMatchBorder": "#ffff00",
+        "editor.findMatchHighlightBorder": "#e45615",
+        "editor.selectionHighlightBorder": "#ffffff",
+        "editor.lineHighlightBorder": "#383737",
+        // Selection
+        "editor.selectionBackground": "#0a073a",
+        "editor.wordHighlightBackground": "#0a073a",
+        // Misc
+        // "editorCursor.foreground": "#00ff00",
+        // "editor.lineHighlightBackground": "#181818",
+        // "editor.findMatchBackground": "#000000",
+        // Debugger
+        // "statusBar.debuggingBackground": "#410d18",
+        // "statusBar.debuggingForeground": "#dddddd" 
+
+        // Terminal
+        // "terminal.background":"#2B2B2B",
+        // "terminal.foreground":"#E6E1DC",
+        // "terminalCursor.background":"#E6E1DC",
+        // "terminalCursor.foreground":"#E6E1DC",
+        // "terminal.ansiBlack":"#2B2B2B",
+        // "terminal.ansiBlue":"#6D9CBE",
+        // "terminal.ansiBrightBlack":"#5A647E",
+        // "terminal.ansiBrightBlue":"#6D9CBE",
+        // "terminal.ansiBrightCyan":"#519F50",
+        // "terminal.ansiBrightGreen":"#A5C261",
+        // "terminal.ansiBrightMagenta":"#B6B3EB",
+        // "terminal.ansiBrightRed":"#DA4939",
+        // "terminal.ansiBrightWhite":"#F9F7F3",
+        // "terminal.ansiBrightYellow":"#FFC66D",
+        // "terminal.ansiCyan":"#519F50",
+        // "terminal.ansiGreen":"#A5C261",
+        // "terminal.ansiMagenta":"#B6B3EB",
+        // "terminal.ansiRed":"#DA4939",
+        // "terminal.ansiWhite":"#E6E1DC",
+        // "terminal.ansiYellow":"#FFC66D"
+    }
+}
