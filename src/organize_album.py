@@ -92,7 +92,7 @@ def rename_folder(fn, folder_path):
 
 if __name__ == '__main__':
     # folder_path = input("Please enter your path: ")
-    folder_path = 'D:\\Downloads\\tmp'
+    folder_path = 'D:\\Downloads'
 
     organize_album(folder_path)
 
