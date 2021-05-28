@@ -13,7 +13,7 @@
 
     /* Python */
     //"python.pythonPath": "${config:python.pythonPath}", // Mac
-    "python.pythonPath": "/Users/huangyue-lun/.pyenv/shims/python", // Mac
+    "python.pythonPath": "/usr/local/bin/Python3", // Mac
 
     /* Golang */
     "files.autoSave": "onFocusChange",
