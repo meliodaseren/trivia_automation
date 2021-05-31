@@ -9,7 +9,7 @@
     "explorer.confirmDelete": false,
     "editor.fontSize": 15,
     // "editor.fontFamily": "'DisposableDroid BB', Consolas, 'Courier New', 'monospace', 'SourceCodePro-Medium'",
-    "vim.disableAnnoyingNeovimMessage": true, // Win10
+    // "vim.disableAnnoyingNeovimMessage": true, // Win10
 
     /* Python */
     //"python.pythonPath": "${config:python.pythonPath}", // Mac
