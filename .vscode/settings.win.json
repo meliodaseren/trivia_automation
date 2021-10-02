@@ -14,6 +14,7 @@
     /* Python */
     //"python.pythonPath": "${config:python.pythonPath}", // Mac
     //"python.pythonPath": "/Users/huangyue-lun/.pyenv/shims/python",
+    "python.pythonPath": "D:\\Python\\Python39\\python.exe", // Windows
 
     /* Golang */
     "files.autoSave": "onFocusChange",
