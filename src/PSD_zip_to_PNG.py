@@ -8,7 +8,7 @@ from glob import glob
 import shutil
 
 
-class PSDtoPNG:
+class PSD_zip_to_PNG:
     def __init__(self, path) -> None:
         self.path = path
 
@@ -84,6 +84,6 @@ if __name__ == '__main__':
 
     workpath = input("Please enter your path: ")
 
-    converter = PSDtoPNG(workpath)
+    converter = PSD_zip_to_PNG(workpath)
     converter.main()
 
