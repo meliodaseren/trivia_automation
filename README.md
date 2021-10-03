@@ -1,16 +1,9 @@
 
-## Support to process trivial work on my Windows
+## Support to process trivial work on my Windows 10
 
-* Environment
-    * Windows 10 64 bits
-    * Python 3.9.0
-
-## Tasks
-
-1. `src/organize_album.py` : 照指定格式整理 MP3 音樂資料夾
-2. `src/remove_rar_postfix.py` : 去除壓縮檔後綴
-3. `src/list_directory_tree.py` : 備份資料夾結構
-4. `src/zip_jpg_to_cbz.py`：壓縮 jpg 到電子書格式 cbz
+1. `src/album_organizer.py` : 照指定格式整理專輯資料夾
+2. `src/comic_ebook_generator.py`：壓縮 jpg 到電子書格式 cbz
+3. `src/lPSD_zip_to_PNG.py` : 解壓縮 psd 並轉換至 png
 
 ---
 
