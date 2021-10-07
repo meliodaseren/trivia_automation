@@ -1,11 +1,11 @@
 #!/usr/bin/evn python
 
 import os
-import sys
+# import sys
+# import shutil
 import zipfile
 import subprocess
 from glob import glob
-import shutil
 
 
 class PSD_zip_to_PNG:
