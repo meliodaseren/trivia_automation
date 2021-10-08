@@ -5,7 +5,7 @@
     ],
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    "editor.fontSize": 15,
+    
 
     /* TODO Highlight setting */
     "todohighlight.keywords": [
@@ -35,7 +35,7 @@
     /* Terminal */
     // "terminal.integrated.lineHeight": 1.1,
     "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "Consolas",
+    "terminal.integrated.fontFamily": "monospace",
     // "terminal.integrated.fontFamily": "Monaco, Menlo, 'Courier New', monospace" // Mac
     "workbench.colorCustomizations": {
         // Borders
