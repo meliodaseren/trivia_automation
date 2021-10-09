@@ -1,17 +1,17 @@
 [core]
-	editor = \"E:\\Sublime Text Build 3211 x64\\sublime_text.exe\" -w
+	editor = "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl" -w
 [user]
 	email = julian07027@gmail.com
 	name = Eren
 [diff]
-	tool = bcomp
-[difftool "bcomp"]
-	cmd = \"E:\\Beyond Compare 4\\BCompare.exe\" \"$LOCAL\" \"$REMOTE\"
+	tool = tkdiff
+[difftool "tkdiff"]
+	cmd = /usr/local/bin/tkdiff $LOCAL $REMOTE
 [difftool]
 	prompt = false
 [merge]
-	tool = bcomp
+	tool = tkdiff
 [mergetool]
 	prompt = false
-[mergetool "bcomp"]
-	cmd = \"E:\\Beyond Compare 4\\BCompare.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+[mergetool "tkdiff"]
+	cmd = /usr/local/bin/tkdiff $LOCAL $REMOTE $BASE $MERGED

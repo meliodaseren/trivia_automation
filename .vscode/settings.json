@@ -5,7 +5,22 @@
     ],
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    
+
+    /* Markdown */
+    "markdown.preview.fontSize": 13,
+    "markdown.preview.lineHeight": 1.4,
+
+    /* Terminal */
+    "workbench.colorCustomizations": {
+        // Borders
+        "editor.findMatchBorder": "#ffff00",
+        "editor.findMatchHighlightBorder": "#e45615",
+        "editor.selectionHighlightBorder": "#ffffff",
+        "editor.lineHighlightBorder": "#383737",
+        // Selection
+        "editor.selectionBackground": "#0a073a",
+        "editor.wordHighlightBackground": "#0a073a"
+    },
 
     /* TODO Highlight setting */
     "todohighlight.keywords": [
@@ -26,25 +41,5 @@
             "color": "#ffffff",
             "backgroundColor": "#DC143C"
         }
-    ],
-
-    /* Markdown */
-    "markdown.preview.fontSize": 13,
-    "markdown.preview.lineHeight": 1.4,
-
-    /* Terminal */
-    // "terminal.integrated.lineHeight": 1.1,
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "monospace",
-    // "terminal.integrated.fontFamily": "Monaco, Menlo, 'Courier New', monospace" // Mac
-    "workbench.colorCustomizations": {
-        // Borders
-        "editor.findMatchBorder": "#ffff00",
-        "editor.findMatchHighlightBorder": "#e45615",
-        "editor.selectionHighlightBorder": "#ffffff",
-        "editor.lineHighlightBorder": "#383737",
-        // Selection
-        "editor.selectionBackground": "#0a073a",
-        "editor.wordHighlightBackground": "#0a073a"
-    }
+    ]
 }
