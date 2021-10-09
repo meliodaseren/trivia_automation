@@ -86,4 +86,3 @@ if __name__ == '__main__':
 
     converter = PSD_zip_to_PNG(workpath)
     converter.main()
-

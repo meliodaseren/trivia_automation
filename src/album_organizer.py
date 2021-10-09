@@ -97,4 +97,3 @@ if __name__ == '__main__':
     #folder_path = 'D:\\Downloads'
     obj = album_organizer(folder_path)
     obj.main(backup=False)
-
