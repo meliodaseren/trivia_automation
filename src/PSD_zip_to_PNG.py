@@ -35,6 +35,9 @@ class PSD_zip_to_PNG:
 
 
     def unzip_iterator(self, inputpath):
+        """
+          unzip the *.zip file if it exist.
+        """
         for filename in glob(f'{inputpath}{os.sep}*.zip'):
             dirname = os.path.splitext(filename)[0]
             if not os.path.exists(dirname):
@@ -48,6 +51,11 @@ class PSD_zip_to_PNG:
 
 
     def convert_iterator(self, inputpath):
+        """
+          Convert the .psd to .png by ImageMagick
+          https://imagemagick.org/script/download.php
+          https://imagemagick.org/script/convert.php
+        """
         os.chdir(inputpath)
         for subdir, dirs, files in os.walk('.'):
             for _ in files:
@@ -55,11 +63,7 @@ class PSD_zip_to_PNG:
                     # psd_path = f'{subdir}{os.sep}{_}'
                     psd_path = f'{subdir}{os.sep}{_}[0]'
                     filename = os.path.splitext(_)[0]
-                    png_path = f'{subdir}{os.sep}{filename}.png'
-
-                    # Convert the .psd to .png by ImageMagick
-                    # https://imagemagick.org/script/download.php
-                    # https://imagemagick.org/script/convert.php
+                    png_path = f'{subdir}{os.sep}{filename}.png'          
                     if not os.path.exists(png_path):
                         # print(f'[INFO] convert {psd_path} -flatten {png_path}')
                         # os.system(f'convert {psd_path} -flatten {png_path}')
@@ -70,8 +74,7 @@ class PSD_zip_to_PNG:
                         p = subprocess.Popen(f'convert {psd_path} {png_path}', shell=True)
                         p.wait()
                     else:
-                        pass
-                        # print(f'[WARN] {png_path} is exist')
+                        print(f'[WARN] {png_path} is exist')
         os.chdir(os.getcwd())
 
 
