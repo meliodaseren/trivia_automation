@@ -9,6 +9,10 @@ from glob import glob
 
 
 class PSD_zip_to_PNG:
+    """
+    input the folder path
+    recursively unzip all the *.zip and convert *.psd to *.png
+    """
     def __init__(self, path) -> None:
         self.path = path
 
