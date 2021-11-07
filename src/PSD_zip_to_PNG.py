@@ -1,11 +1,10 @@
 #!/usr/bin/evn python
 
 import os
-# import sys
-# import shutil
 import zipfile
 import subprocess
 from glob import glob
+from rich import print
 
 
 class PSD_zip_to_PNG:
@@ -16,27 +15,23 @@ class PSD_zip_to_PNG:
     def __init__(self, path) -> None:
         self.path = path
 
-
     def zip_dir(self, inputpath):
         zf = zipfile.ZipFile('{path}', 'w', zipfile.ZIP_DEFLATED)
         for root, dirs, files in os.walk(inputpath):
             for filename in files:
                 zf.write(os.path.join(root, filename))
 
-
     def unzip(self, inputpath, outputpath):
         try:
             zf = zipfile.ZipFile(inputpath, 'r')
             zf.extractall(outputpath)
         except NotImplementedError as e:
-            print(f'[ERROR] {inputpath}, That compression method is not supported')
+            print(f'[bold red1][ERROR][/bold red1] {inputpath}, That compression method is not supported')
             pass
-
 
     def zip_list(self, inputpath):
         zf = zipfile.ZipFile(inputpath, 'r')
         print(zf.namelist())
-
 
     def unzip_iterator(self, inputpath):
         """
@@ -51,8 +46,7 @@ class PSD_zip_to_PNG:
                 else:
                     print(f'[ERROR] {filename} is not zip')
             else:
-                print(f'[WARN] {dirname} is exist')
-
+                print(f'[bold red1][ERROR][/bold red1] {dirname} is exist')
 
     def convert_iterator(self, inputpath):
         """
@@ -77,10 +71,9 @@ class PSD_zip_to_PNG:
                         # os.system(f'convert {psd_path} {png_path}')
                         p = subprocess.Popen(f'convert {psd_path} {png_path}', shell=True)
                         p.wait()
-                    else:
-                        print(f'[WARN] {png_path} is exist')
+                    # else:
+                        # print(f'[bold gold1][WARN][/bold gold1] {png_path} is exist')
         os.chdir(os.getcwd())
-
 
     def main(self):
         self.unzip_iterator(self.path)
