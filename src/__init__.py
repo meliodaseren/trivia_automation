@@ -10,7 +10,6 @@ import re
 from glob import glob
 from os import listdir, rename
 
-
 def rename_rar(folder_path):
     for fn in listdir(folder_path):
         try:
