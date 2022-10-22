@@ -8,7 +8,6 @@
             "type": "shell",
             "command": "${config:python.pythonPath}",
             "args": [
-                // Ask msbuild to generate full paths for file names.
                 "${file}"
             ],
             "group": {
@@ -16,14 +15,12 @@
                 "isDefault": true
             },
             "presentation": {
-                // Reveal the output only if unrecognized errors occur.
                 "echo": true,
                 //"reveal": "silent"
                 "reveal": "always",
                 "focus": true,
                 "panel": "shared"
             },
-            // Use the standard MS compiler pattern to detect errors, warnings and infos
             "problemMatcher": "$msCompile"
         }
     ]
