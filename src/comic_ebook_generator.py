@@ -2,11 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-import sys
-import re
 import zipfile
-# from glob import glob
-
 
 class comic_ebook_generator:
     def __init__(self, path):
@@ -32,8 +28,7 @@ class comic_ebook_generator:
                 os.chdir(dpath)
                 for file in os.listdir(dpath):
                     if '.png' in file or '.jpg' in file:
-                        # file = f'{dpath}\\{file}'
-                        print(f"zip {file} to {out_cbz}")
+                        print(f'zip {file} to {out_cbz}')
                         output_zip.write(os.path.join('.', file), file, zipfile.ZIP_DEFLATED)
                 os.chdir(path)
                 output_zip.close()
@@ -43,7 +38,6 @@ class comic_ebook_generator:
 
 
 if __name__ == '__main__':
-    folder_path = input("Please enter your path: ")
-    # folder_path = 'E:\\kobo ebook'
+    folder_path = input('Please enter your path: ')
     obj = comic_ebook_generator(folder_path)
     obj.zip_all_jpg(folder_path)
