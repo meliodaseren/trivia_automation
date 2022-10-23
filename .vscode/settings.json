@@ -10,6 +10,9 @@
     "markdown.preview.fontSize": 13,
     "markdown.preview.lineHeight": 1.4,
 
+    /* Python Interprete 3.10.4 */
+    "python.pythonPath": "D:/Python/Python310/python.exe",
+
     /* Terminal */
     "workbench.colorCustomizations": {
         // Borders
