@@ -6,7 +6,6 @@ import subprocess
 from glob import glob
 from rich import print
 
-
 class PSD_zip_to_PNG:
     """
     input the folder path
@@ -79,10 +78,8 @@ class PSD_zip_to_PNG:
         self.unzip_iterator(self.path)
         self.convert_iterator(self.path)
 
-
 if __name__ == '__main__':
 
     workpath = input("Please enter your path: ")
-
     converter = PSD_zip_to_PNG(workpath)
     converter.main()
